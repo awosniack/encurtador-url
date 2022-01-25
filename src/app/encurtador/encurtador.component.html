@@ -1,0 +1,43 @@
+<ng-container [formGroup]="formGroup">
+  <div class="card text-center">
+    <div class="card-header">Encurtador de URL</div>
+    <div class="card-body">
+      <h5 class="card-title">URL</h5>
+      <p class="card-text">Insira um link para encurtar</p>
+      <div class="form-row">
+        <div class="col-md-4 form-group mx-auto input-group">
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            formControlName="url"
+          />
+          <button
+            type="button"
+            (click)="encurtar()"
+            class="btn btn-primary mx-3"
+            [disabled]="!validarBotao()"
+          >
+            Encurtar!
+          </button>
+        </div>
+      </div>
+      <div *ngIf="urlEncurtada != ''" class="form-row">
+        <div class="col-md-4 form-group mx-auto input-group">
+          <input
+            type="text"
+            [value]="urlEncurtada"
+            readonly
+            class="form-control"
+            id="urlEncurtada"
+            #formInputText
+          />
+          <button class="btn btn-primary mx-3" [ngxClipboard]="formInputText">
+            Copiar URL
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
