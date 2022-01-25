@@ -31,6 +31,7 @@ export class EncurtadorComponent implements OnInit {
   }
 
   encurtar() {
+    this.urlEncurtada = '';
     // faz a chamada para o servico de encurtar a url, e com o resultado monta a url gerada
     this.encurtadorService
       .encurtarURL(this.formGroup.get('url')?.value)
