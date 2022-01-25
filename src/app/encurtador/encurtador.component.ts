@@ -16,14 +16,9 @@ export class EncurtadorComponent implements OnInit {
   backend: string = environment.backend + '/';
   urlEncurtada: string = '';
 
-  constructor(
-    private encurtadorService: EncurtadorService,
-    private router: Router
-  ) {}
+  constructor(private encurtadorService: EncurtadorService) {}
 
-  ngOnInit(): void {
-    console.log(this.router.url);
-  }
+  ngOnInit(): void {}
 
   validarBotao() {
     // retorna se o campo da url e diferente de nulo
